@@ -1,0 +1,39 @@
+{
+    "pt": {
+        "titulo_site": "Outubro Rosa",
+
+        "menu_inicio": "Início",
+        "menu_prevencao": "Prevenção",
+        "menu_famosas": "Famosas",
+        "menu_informacoes": "Informações",
+        "menu_contato": "Contato",
+
+        "hero_titulo": "Outubro Rosa",
+        "hero_texto": "Conscientização salva vidas. Previna-se e divulgue esta causa.",
+        "botao_saiba": "Saiba mais",
+
+        "sec_oquee_titulo": "O que é o Outubro Rosa?",
+        "sec_oquee_texto": "O Outubro Rosa é uma campanha mundial dedicada à prevenção e ao diagnóstico precoce do câncer de mama. Durante todo o mês, ações de conscientização acontecem para informar e incentivar o cuidado com a saúde.",
+
+        "footer_texto": "Site desenvolvido para o projeto do curso de Desenvolvimento de Sistemas"
+    },
+
+    "en": {
+        "titulo_site": "Pink October",
+
+        "menu_inicio": "Home",
+               "menu_prevencao": "Prevention",
+        "menu_famosas": "Celebrities",
+        "menu_informacoes": "Information",
+        "menu_contato": "Contact",
+
+        "hero_titulo": "Pink October",
+        "hero_texto": "Awareness saves lives. Prevent and share this cause.",
+        "botao_saiba": "Learn more",
+
+        "sec_oquee_titulo": "What is Pink October?",
+        "sec_oquee_texto": "Pink October is a worldwide campaign dedicated to the prevention and early diagnosis of breast cancer. Throughout the month, awareness actions take place to inform and encourage health care.",
+
+        "footer_texto": "Website developed for the Systems Development course project"
+    }
+}

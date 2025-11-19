@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="titulo_site">Contato • Outubro Rosa</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Botões de idioma no topo */
+        .idiomas {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+        .idiomas button {
+            margin: 0 4px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            background-color: #ff5fa2;
+            color: white;
+            transition: 0.3s;
+        }
+        .idiomas button:hover {
+            background-color: #ff82b9;
+        }
+    </style>
+</head>
+<body>
+
+<!-- BOTÕES DE IDIOMA -->
+<div class="idiomas">
+    <button onclick="setLanguage('pt')">🇧🇷 PT</button>
+    <button onclick="setLanguage('en')">🇺🇸 EN</button>
+    <button onclick="setLanguage('es')">🇪🇸 ES</button>
+    <button onclick="setLanguage('fr')">🇫🇷 FR</button>
+    <button onclick="setLanguage('de')">🇩🇪 DE</button>
+</div>
+
+<!-- MENU -->
+<header class="menu">
+    <nav>
+        <a href="index.html" data-i18n="menu_inicio">Início</a>
+        <a href="prevencao.html" data-i18n="menu_prevencao">Prevenção</a>
+        <a href="famosas.html" data-i18n="menu_famosas">Famosas</a>
+        <a href="informacoes.html" data-i18n="menu_informacoes">Informações</a>
+        <a href="contato.html" class="ativo" data-i18n="menu_contato">Contato</a>
+    </nav>
+</header>
+
+<!-- FORMULÁRIO DE CONTATO -->
+<section class="card page">
+    <h2 data-i18n="contato_titulo">Entre em Contato</h2>
+    <p data-i18n="contato_texto">Envie uma mensagem pelo WhatsApp preenchendo o formulário abaixo:</p>
+
+    <form id="formWhats" class="form-contato">
+        <label data-i18n="form_nome">Seu nome:</label>
+        <input type="text" id="nome" placeholder="Digite seu nome" required>
+
+        <label data-i18n="form_mensagem">Sua mensagem:</label>
+        <textarea id="mensagem" placeholder="Escreva sua mensagem..." required></textarea>
+
+        <button type="submit" class="botao" data-i18n="botao_whats">Enviar pelo WhatsApp</button>
+    </form>
+</section>
+
+
+<!-- SCRIPT DE WHATSAPP -->
+<script>
+document.getElementById("formWhats").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const nome = document.getElementById("nome").value;
+    const mensagem = document.getElementById("mensagem").value;
+    const texto = `Olá! Meu nome é ${nome}.%0A%0A${mensagem}`;
+    const telefone = "5511999999999"; // insira o número do WhatsApp aqui
+    const url = `https://wa.me/${telefone}?text=${texto}`;
+    window.open(url, "_blank");
+});
+</script>
+
+<!-- SCRIPT DE TROCA DE IDIOMA -->
+<script>
+const translations = {
+    "pt": {
+        "titulo_site": "Contato • Outubro Rosa",
+        "menu_inicio": "Início",
+        "menu_prevencao": "Prevenção",
+        "menu_famosas": "Famosas",
+        "menu_informacoes": "Informações",
+        "menu_contato": "Contato",
+        "contato_titulo": "Entre em Contato",
+        "contato_texto": "Envie uma mensagem pelo WhatsApp preenchendo o formulário abaixo:",
+        "form_nome": "Seu nome:",
+        "form_mensagem": "Sua mensagem:",
+        "botao_whats": "Enviar pelo WhatsApp",
+        "footer_texto": "Site desenvolvido para o projeto do curso de Desenvolvimento de Sistemas"
+    },
+    "en": {
+        "titulo_site": "Contact • Pink October",
+        "menu_inicio": "Home",
+        "menu_prevencao": "Prevention",
+        "menu_famosas": "Celebrities",
+        "menu_informacoes": "Information",
+        "menu_contato": "Contact",
+        "contato_titulo": "Get in Touch",
+        "contato_texto": "Send a message via WhatsApp by filling out the form below:",
+        "form_nome": "Your name:",
+        "form_mensagem": "Your message:",
+        "botao_whats": "Send via WhatsApp",
+        "footer_texto": "Website developed for the Systems Development course project"
+    },
+    "es": {
+        "titulo_site": "Contacto • Octubre Rosa",
+        "menu_inicio": "Inicio",
+        "menu_prevencao": "Prevención",
+        "menu_famosas": "Famosas",
+        "menu_informacoes": "Información",
+        "menu_contato": "Contacto",
+        "contato_titulo": "Ponte en contacto",
+        "contato_texto": "Envía un mensaje por WhatsApp completando el formulario a continuación:",
+        "form_nome": "Tu nombre:",
+        "form_mensagem": "Tu mensaje:",
+        "botao_whats": "Enviar por WhatsApp",
+        "footer_texto": "Sitio desarrollado para el proyecto del curso de Desarrollo de Sistemas"
+    },
+    "fr": {
+        "titulo_site": "Contact • Octobre Rose",
+        "menu_inicio": "Accueil",
+        "menu_prevencao": "Prévention",
+        "menu_famosas": "Célébrités",
+        "menu_informacoes": "Informations",
+        "menu_contato": "Contact",
+        "contato_titulo": "Contactez-nous",
+        "contato_texto": "Envoyez un message via WhatsApp en remplissant le formulaire ci-dessous :",
+        "form_nome": "Votre nom :",
+        "form_mensagem": "Votre message :",
+        "botao_whats": "Envoyer via WhatsApp",
+        "footer_texto": "Site développé pour le projet du cours de Développement de Systèmes"
+    },
+    "de": {
+        "titulo_site": "Kontakt • Rosa Oktober",
+        "menu_inicio": "Startseite",
+        "menu_prevencao": "Prävention",
+        "menu_famosas": "Prominente",
+        "menu_informacoes": "Informationen",
+        "menu_contato": "Kontakt",
+        "contato_titulo": "Kontakt aufnehmen",
+        "contato_texto": "Senden Sie eine Nachricht über WhatsApp, indem Sie das Formular unten ausfüllen:",
+        "form_nome": "Ihr Name:",
+        "form_mensagem": "Ihre Nachricht:",
+        "botao_whats": "Per WhatsApp senden",
+        "footer_texto": "Website entwickelt für das Projekt des Systems Development-Kurses"
+    }
+};
+
+function setLanguage(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        el.innerHTML = translations[lang][key] || el.innerHTML;
+    });
+    document.title = translations[lang]["titulo_site"];
+}
+
+// Idioma padrão
+window.onload = () => {
+    setLanguage("pt");
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="titulo_site">Outubro Rosa</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Botões de idioma no topo */
+        .idiomas {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+        .idiomas button {
+            margin: 0 4px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            background-color: #ff5fa2;
+            color: white;
+            transition: 0.3s;
+        }
+        .idiomas button:hover {
+            background-color: #ff82b9;
+        }
+    </style>
+</head>
+<body>
+
+<!-- BOTÕES DE IDIOMA -->
+<div class="idiomas">
+    <button onclick="setLanguage('pt')">🇧🇷 PT</button>
+    <button onclick="setLanguage('en')">🇺🇸 EN</button>
+    <button onclick="setLanguage('es')">🇪🇸 ES</button>
+    <button onclick="setLanguage('fr')">🇫🇷 FR</button>
+    <button onclick="setLanguage('de')">🇩🇪 DE</button>
+</div>
+
+<!-- MENU -->
+<header class="menu">
+    <nav>
+        <a href="index.html" data-i18n="menu_inicio">Início</a>
+        <a href="prevencao.html" data-i18n="menu_prevencao">Prevenção</a>
+        <a href="famosas.html" data-i18n="menu_famosas">Famosas</a>
+        <a href="informacoes.html" data-i18n="menu_informacoes">Informações</a>
+        <a href="contato.html" data-i18n="menu_contato">Contato</a>
+    </nav>
+</header>
+
+<!-- SEÇÃO FAMOSAS -->
+<section class="card">
+    <h2 data-i18n="famosas_titulo">Casos de Famosas que Enfrentaram o Câncer de Mama</h2>
+    <p data-i18n="famosas_texto">Diversas mulheres conhecidas enfrentaram o câncer de mama e reforçam a importância da prevenção e diagnóstico precoce.</p>
+
+    <div class="famosas-container">
+        <div class="famosa-card">
+            <img src="imgs/angelina.jpg" alt="Angelina Jolie">
+            <h3>Angelina Jolie</h3>
+            <p>Realizou uma mastectomia preventiva após descobrir predisposição genética.</p>
+        </div>
+        <div class="famosa-card">
+            <img src="imgs/ana_furtado.jpg" alt="Ana Furtado">
+            <h3>Ana Furtado</h3>
+            <p>Apresentadora brasileira que venceu o câncer de mama em 2018.</p>
+        </div>
+        <div class="famosa-card">
+            <img src="imgs/sheryl_crow.jpg" alt="Sheryl Crow">
+            <h3>Sheryl Crow</h3>
+            <p>Cantora diagnosticada em 2006, tornou-se porta-voz da prevenção.</p>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- SCRIPT DE TROCA DE IDIOMA -->
+<script>
+const translations = {
+    "pt": {
+        "titulo_site": "Outubro Rosa",
+        "menu_inicio": "Início",
+        "menu_prevencao": "Prevenção",
+        "menu_famosas": "Famosas",
+        "menu_informacoes": "Informações",
+        "menu_contato": "Contato",
+        "famosas_titulo": "Casos de Famosas que Enfrentaram o Câncer de Mama",
+        "famosas_texto": "Diversas mulheres conhecidas enfrentaram o câncer de mama e reforçam a importância da prevenção e diagnóstico precoce.",
+        "footer_texto": "Site desenvolvido para o projeto do curso de Desenvolvimento de Sistemas"
+    },
+    "en": {
+        "titulo_site": "Pink October",
+        "menu_inicio": "Home",
+        "menu_prevencao": "Prevention",
+        "menu_famosas": "Celebrities",
+        "menu_informacoes": "Information",
+        "menu_contato": "Contact",
+        "famosas_titulo": "Celebrities Who Faced Breast Cancer",
+        "famosas_texto": "Several well-known women faced breast cancer and emphasize the importance of prevention and early diagnosis.",
+        "footer_texto": "Website developed for the Systems Development course project"
+    },
+    "es": {
+        "titulo_site": "Octubre Rosa",
+        "menu_inicio": "Inicio",
+        "menu_prevencao": "Prevención",
+        "menu_famosas": "Famosas",
+        "menu_informacoes": "Información",
+        "menu_contato": "Contacto",
+        "famosas_titulo": "Casos de Famosas que Enfrentaron el Cáncer de Mama",
+        "famosas_texto": "Varias mujeres conocidas enfrentaron el cáncer de mama y refuerzan la importancia de la prevención y el diagnóstico precoz.",
+        "footer_texto": "Sitio desarrollado para el proyecto del curso de Desarrollo de Sistemas"
+    },
+    "fr": {
+        "titulo_site": "Octobre Rose",
+        "menu_inicio": "Accueil",
+        "menu_prevencao": "Prévention",
+        "menu_famosas": "Célébrités",
+        "menu_informacoes": "Informations",
+        "menu_contato": "Contact",
+        "famosas_titulo": "Cas célèbres ayant affronté le cancer du sein",
+        "famosas_texto": "Plusieurs femmes connues ont affronté le cancer du sein et soulignent l'importance de la prévention et du diagnostic précoce.",
+        "footer_texto": "Site développé pour le projet du cours de Développement de Systèmes"
+    },
+    "de": {
+        "titulo_site": "Rosa Oktober",
+        "menu_inicio": "Startseite",
+        "menu_prevencao": "Prävention",
+        "menu_famosas": "Prominente",
+        "menu_informacoes": "Informationen",
+        "menu_contato": "Kontakt",
+        "famosas_titulo": "Prominente, die Brustkrebs durchgemacht haben",
+        "famosas_texto": "Mehrere bekannte Frauen hatten Brustkrebs und betonen die Bedeutung von Prävention und Früherkennung.",
+        "footer_texto": "Website entwickelt für das Projekt des Systems Development-Kurses"
+    }
+};
+
+function setLanguage(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        el.innerHTML = translations[lang][key] || el.innerHTML;
+    });
+    document.title = translations[lang]["titulo_site"];
+}
+
+// Define idioma padrão
+window.onload = () => {
+    setLanguage("pt");
+};
+</script>
+
+</body>
+</html>
